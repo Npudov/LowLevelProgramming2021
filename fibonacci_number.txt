@@ -1,0 +1,57 @@
+        T58K  [ set load point  ]
+        G0K    [ set theta       ]
+
+[  0 ]  O194F  [output digits]
+
+        T200F  [ a = 0           ]
+        A199F  [ count -> a      ]
+        S195F  [ dec(a)          ]
+        U199F  [ a -> count      ]
+
+        T200F  [ a = 0           ]
+
+        A197F  [ a += y          ]
+        U198F  [ a -> temp       ]
+        U201F  [ a -> 201        ]
+
+        T0F
+        [A10@]   [ pick up self    ]
+        [G150F]  [ call proc P6    ]
+        A201F  [ 201 -> a        ]
+
+        A196F  [ a += x          ]
+        T197F  [ a -> y; a = 0   ]
+        A198F  [ a += temp       ]
+        T196F  [ a -> x; a = 0   ]
+
+        A199F  [ count -> a      ]
+        E1@    [ if a>=0 go to 1 ]
+
+        T200F  [ a = 0           ]
+        A201F  [ a += 201          ]
+        TF
+        A20@
+        G150F [ call P6]
+        ZF    [ halt ]
+
+[P6]
+        T150K [ set load point]
+GKA3FT25@H29@VFT4DA3@TFH30@S6@T1F
+V4DU4DAFG26@TFTFO5FA4DF4FS4F
+L4FT4DA1FS3@G9@EFSFO31@E20@J995FJF!F
+
+      T194K [ set load point]
+[ 194 ]  #F    [ digits            ]
+[ 195 ]  P0D   [ const =  1        ]
+[ 196 ]  P0F   [ var first = 0      ]
+[ 197 ]  P0D   [ var last = 1      ]
+[ 198 ]  P0F   [ var temp = 0   ]
+               [ set fibonacci series ]
+[ 199 ]  P4F   [ var cnt = 8  ]
+[ 200 ]  P0F   [ clear a    ]
+[ 201 ]  P0F   [ last number fibonacci(answer)     ]
+
+
+
+       E58KPF    [ Enter at location 58 ]
+                                             

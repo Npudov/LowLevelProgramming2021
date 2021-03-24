@@ -1,0 +1,30 @@
+   	T59S  [ set load point  ]
+        E41S
+[ 33  ]  #F    [ figs            ]
+[ 34  ]  P0L   [ const: 1        ]
+[ 35  ]  P0S   [ var first = 0      ]
+[ 36  ]  P0L   [ var last = 1      ]
+[ 37  ]  P0S   [ var temp = 0   ]
+[ 38  ]  P3L   [ var count = 7 but fibonacci series  = 8]
+[ 39  ]  P0S   [ clear a     ]
+[ 40  ]  P0S   [ last number     ]
+[ 41  ] O33S   [output digits]
+        T39S   [ a = 0           ]
+        A38S   [ count -> a      ]
+        S34S   [ dec(a)          ]
+        U38S   [ a -> count      ]
+        T39S   [ a = 0           ]
+        A36S   [ a += last          ]
+        U37S   [ a -> temp       ]
+        U40S   [ a -> 40         ]
+        A35S   [ a += first          ]
+        T36S   [ a -> last; a = 0   ]
+        A37S   [ a += temp       ]
+        T35S   [ a -> first; a = 0   ]
+        A38S   [ count -> a      ]
+[ 55  ] E42@    [ if a>=0 go to 1 ]
+        T39S
+        A40S
+[ 58  ] ZS
+                                    
+
