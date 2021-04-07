@@ -35,10 +35,8 @@ __start:
           add a6, a4, a5 # ans = first + last
           
           #сделать переприсваивание
-          add t0, a6, zero # t0 = ans
-          add t1, a5, zero # t1 = last
-          add a4, t1, zero # first = last
-          add a5, t0, zero # last = ans
+          add a4, a5, zero # first = last
+          add a5, a6, zero # last = ans
           
           addi a2, a2, 1 #a2+=1 
           
