@@ -1,0 +1,14 @@
+fibProgram: main.o libfib.a
+				C:\Progra~1\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin\x86_64-w64-mingw32-gcc.exe main.o libfib.a -o fibProgram
+				
+main.o : main.c
+				C:\Progra~1\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin\x86_64-w64-mingw32-gcc.exe -c main.c
+
+libfib.a : fib.o fib.h
+				ar -rsc libfib.a fib.o
+
+fib.o : fib.c
+				C:\Progra~1\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin\x86_64-w64-mingw32-gcc.exe -c fib.c
+
+clean :
+				rm *.o *.a *.exe
