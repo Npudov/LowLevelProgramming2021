@@ -1,0 +1,52 @@
+#usage
+# mingw32-make.exe -f D:\laba5_binaryheap_proga\makefile
+# mingw32-make.exe -f D:\laba5_binaryheap_proga\makefile clean
+# Project name and version
+Proj    := laba5_binaryheap_proga
+Version := Debug
+LIBNAME := libHeap.a
+
+#paths for Project (Ppath) Object files (Opath) and binary path (Bpath)
+#Ppath := D:\$(Proj)
+Ppath := .
+Opath := $(Ppath)\obj\$(Version)
+Bpath := $(Ppath)\cmake-build-debug
+#когда запускаем экзешник
+
+#Library & header paths
+#GCCpath := "c:\Program Files\mingw-w64\x86_64-8.1.0-win32-seh-rt_v6-rev0\mingw64\bin"
+
+flags = -std=c11 -pedantic -Wall -Wextra
+
+#CXX = $(GCCpath)\x86_64-w64-mingw32-gcc.exe
+CXX = gcc
+
+#path for object files
+Obj = main.o binaryHeap.o test.o
+ObjPath = $(Opath)\main.o $(Opath)\binaryHeap.o $(Opath)\test.o
+
+.PHONY: clean all
+
+all: $(LIBNAME) $(Proj).exe
+
+$(LIBNAME): binaryHeap.o
+	ar -rsc $(Ppath)\$@ $(Opath)\$^
+
+$(Proj).exe : $(Obj)
+	$(CXX) -o $(Bpath)\$(Proj).exe $(ObjPath)
+#	$(CXX) -o $(Bpath)\$(Proj).exe $(Obj)
+
+%.o: %.c
+	$(CXX) $(flags) -c $^ -o $(Opath)\$@
+
+#$(Opath)\main.o : $(Ppath)\main.c
+#	$(CXX) $(flags) -c $^ -o $@
+
+#$(Opath)\binaryHeap.o : $(Ppath)\binaryHeap.c
+#	$(CXX) $(flags) -c $^ -o $@
+
+#$(Opath)\test.o : $(Ppath)\test.c
+#	$(CXX) $(flags) -c $^ -o $@
+
+clean:
+	del $(Bpath)\$(Proj).exe $(Ppath)\$(LIBNAME) $(Opath)\*.o

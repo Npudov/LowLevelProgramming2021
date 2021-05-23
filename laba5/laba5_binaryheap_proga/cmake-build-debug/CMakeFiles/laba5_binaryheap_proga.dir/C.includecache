@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/laba5_binaryheap_proga/binaryHeap.h
+
+D:/laba5_binaryheap_proga/main.c
+stdio.h
+-
+stdlib.h
+-
+binaryHeap.h
+D:/laba5_binaryheap_proga/binaryHeap.h
+test.h
+D:/laba5_binaryheap_proga/test.h
+
+D:/laba5_binaryheap_proga/test.h
+
