@@ -10,9 +10,6 @@ void addTest() {
     add(h, 4);
     add(h, 1);
     add(h, 8);
-    /*for (int i = 1; i<=size(h); i++) {
-        printf("%d\n", getElement(h, i));
-    }*/
     int digit = getElement(h, 1);
     if (digit == 1) {
         printf("test 1 passed\n");

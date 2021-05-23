@@ -36,40 +36,29 @@ void add(minBinaryHeap heap, int key) {
 }
 
 void swap(minBinaryHeap heap, int i, int j) {
-    //assert(i>=1 && i<=heap->cntElements && j>=1 && j<=heap->cntElements);
     int temp = heap->list[i];
     heap->list[i] = heap->list[j];
     heap->list[j] = temp;
 }
 
 void bubbleUp(minBinaryHeap heap, int index) {
-    //assert(index>=1 && index<=heap->cntElements);
     int parentIndex = index/2;
-    if (index > 1 && heap->list[index] < heap->list[parentIndex]) { //???
+    if (index > 1 && heap->list[index] < heap->list[parentIndex]) {
         swap(heap, parentIndex, index);
         bubbleUp(heap, parentIndex);
     }
 }
 
 void bubbleDown(minBinaryHeap heap, int index) {
-    //assert(index>=1 && index<=heap->cntElements);
-    //while (2*index <= heap->cntElements) {
         int x = 2 * index;
         if (x <= heap->cntElements) {
             if (x+1 <= heap->cntElements && heap->list[x + 1] < heap->list[x]) {
                 x++;
             }
-        /*if (x < heap->cntElements && heap->list[x + 1] < heap->list[x]) {
-            x++;
-        }*/
         if (heap->list[index] > heap->list[x]) {
             swap(heap, index, x);
             bubbleDown(heap, x);
         }
-        /*if (heap->list[index] <= heap->list[x]) {
-            break;
-        }
-        swap(heap, index,x);*/
     }
 }
 

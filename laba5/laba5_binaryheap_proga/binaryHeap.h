@@ -4,7 +4,6 @@
 
 #ifndef LABA5_BINARYHEAP_PROGA_BINARYHEAP_H
 #define LABA5_BINARYHEAP_PROGA_BINARYHEAP_H
-//typedef int key_type;
 typedef struct strminBinaryHeap *minBinaryHeap;
 
 minBinaryHeap init();

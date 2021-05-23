@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "binaryHeap.h"
-#include "test.h"
 
 int main(int argc, char *argv[]) {
     //можно выводить русские символы в консоль
     system("chcp 1251");
-    //addTest();
     if (argc < 2 || argc > 3) {
         printf("¬ведите данные в формате: входной файл [выходной файл] (если выходного файла нет, вывод будет осуществл€тьс€ в консоль)");
         getchar();
@@ -21,18 +19,13 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     minBinaryHeap h = init();
-    //deInit(h);
     int num;
     int hasRead = 1;
     while (hasRead == 1) {
         hasRead = fscanf(input, "%d", &num);
         if (hasRead == 1){
             add(h, num);
-            //sortOurHeap(getHeapList(h), size(h)); //дл€ записи в файл потом
         }
-        /*if (hasRead != 1) { //!!! попробовать закомментить
-            continue;
-        }*/
     }
     fclose(input);
 
