@@ -3,6 +3,12 @@
 //
 #include <stdio.h>
 #include "binaryHeap.h"
+#include "test.h"
+
+int main() {
+    addTest();
+    getchar();
+}
 
 void addTest() {
     minBinaryHeap h = init();

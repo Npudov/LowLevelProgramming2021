@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/laba5_binaryheap_proga.dir/binaryHeap.c.obj"
   "CMakeFiles/laba5_binaryheap_proga.dir/main.c.obj"
-  "CMakeFiles/laba5_binaryheap_proga.dir/test.c.obj"
   "laba5_binaryheap_proga.exe"
   "laba5_binaryheap_proga.exe.manifest"
   "laba5_binaryheap_proga.pdb"

@@ -196,33 +196,6 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba5_binaryheap_proga.dir\build.make CMakeFiles/laba5_binaryheap_proga.dir/main.c.s
 .PHONY : main.c.s
 
-test.obj: test.c.obj
-
-.PHONY : test.obj
-
-# target to build an object file
-test.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba5_binaryheap_proga.dir\build.make CMakeFiles/laba5_binaryheap_proga.dir/test.c.obj
-.PHONY : test.c.obj
-
-test.i: test.c.i
-
-.PHONY : test.i
-
-# target to preprocess a source file
-test.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba5_binaryheap_proga.dir\build.make CMakeFiles/laba5_binaryheap_proga.dir/test.c.i
-.PHONY : test.c.i
-
-test.s: test.c.s
-
-.PHONY : test.s
-
-# target to generate assembly for a file
-test.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\laba5_binaryheap_proga.dir\build.make CMakeFiles/laba5_binaryheap_proga.dir/test.c.s
-.PHONY : test.c.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -238,9 +211,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... test.obj
-	@echo ... test.i
-	@echo ... test.s
 .PHONY : help
 
 

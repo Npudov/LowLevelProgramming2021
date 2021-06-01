@@ -83,12 +83,6 @@
 		<Unit filename="D:/laba5_binaryheap_proga/main.c">
 			<Option target="laba5_binaryheap_proga"/>
 		</Unit>
-		<Unit filename="D:/laba5_binaryheap_proga/test.c">
-			<Option target="laba5_binaryheap_proga"/>
-		</Unit>
-		<Unit filename="D:/laba5_binaryheap_proga/test.h">
-			<Option target="laba5_binaryheap_proga"/>
-		</Unit>
 		<Unit filename="D:/laba5_binaryheap_proga/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -4,6 +4,12 @@
 # Project name and version
 Proj    := laba5_binaryheap_proga
 Version := Debug
+#usage
+# mingw32-make.exe -f D:\laba5_binaryheap_proga\makefile
+# mingw32-make.exe -f D:\laba5_binaryheap_proga\makefile clean
+# Project name and version
+Proj    := laba5_binaryheap_proga
+Version := Debug
 LIBNAME := libHeap.a
 
 #paths for Project (Ppath) Object files (Opath) and binary path (Bpath)
@@ -22,8 +28,10 @@ flags = -std=c11 -pedantic -Wall -Wextra
 CXX = gcc
 
 #path for object files
-Obj = main.o binaryHeap.o test.o
-ObjPath = $(Opath)\main.o $(Opath)\binaryHeap.o $(Opath)\test.o
+Obj = main.o binaryHeap.o
+ObjTest = test.o binaryHeap.o
+ObjPath = $(Opath)\main.o $(Opath)\binaryHeap.o
+ObjTestPath = $(Opath)\test.o $(Opath)\binaryHeap.o
 
 .PHONY: clean all
 
@@ -34,19 +42,23 @@ $(LIBNAME): binaryHeap.o
 
 $(Proj).exe : $(Obj)
 	$(CXX) -o $(Bpath)\$(Proj).exe $(ObjPath)
-#	$(CXX) -o $(Bpath)\$(Proj).exe $(Obj)
 
 %.o: %.c
 	$(CXX) $(flags) -c $^ -o $(Opath)\$@
 
 #$(Opath)\main.o : $(Ppath)\main.c
-#	$(CXX) $(flags) -c $^ -o $@
+#$(CXX) $(flags) -c $^ -o $@
 
 #$(Opath)\binaryHeap.o : $(Ppath)\binaryHeap.c
-#	$(CXX) $(flags) -c $^ -o $@
+#$(CXX) $(flags) -c $^ -o $@
 
 #$(Opath)\test.o : $(Ppath)\test.c
-#	$(CXX) $(flags) -c $^ -o $@
+#$(CXX) $(flags) -c $^ -o $@
+
+tst: $(Proj)_test.exe
+
+$(Proj)_test.exe: $(ObjTest)
+	$(CXX) -o $(Bpath)\$(Proj)_test.exe $(ObjTestPath)
 
 clean:
 	del $(Bpath)\$(Proj).exe $(Ppath)\$(LIBNAME) $(Opath)\*.o

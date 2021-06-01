@@ -1,12 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#if defined(_WIN64) || defined(_WIN32)
+    #define isWin
+    #include <windows.h>
+#endif
 #include "binaryHeap.h"
 
 int main(int argc, char *argv[]) {
-    //можно выводить русские символы в консоль
-    system("chcp 1251");
+    //РјРѕР¶РЅРѕ РІС‹РІРѕРґРёС‚СЊ СЂСѓСЃСЃРєРёРµ СЃРёРјРІРѕР»С‹ РІ РєРѕРЅСЃРѕР»СЊ
+    #ifdef isWin
+        SetConsoleOutputCP(CP_UTF8);
+    #endif
     if (argc < 2 || argc > 3) {
-        printf("Введите данные в формате: входной файл [выходной файл] (если выходного файла нет, вывод будет осуществляться в консоль)");
+        printf("Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ РІ С„РѕСЂРјР°С‚Рµ: РІС…РѕРґРЅРѕР№ С„Р°Р№Р» [РІС‹С…РѕРґРЅРѕР№ С„Р°Р№Р»] (РµСЃР»Рё РІС‹С…РѕРґРЅРѕРіРѕ С„Р°Р№Р»Р° РЅРµС‚, РІС‹РІРѕРґ Р±СѓРґРµС‚ РѕСЃСѓС‰РµСЃС‚РІР»СЏС‚СЊСЃСЏ РІ РєРѕРЅСЃРѕР»СЊ)");
         getchar();
         return 1;
     }
@@ -14,7 +20,7 @@ int main(int argc, char *argv[]) {
     char *name = argv[1]; //"input.txt";
     if ((input = fopen(name, "r")) == NULL)
     {
-        printf("Не удалось открыть файл");
+        printf("РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»");
         getchar();
         return 1;
     }
@@ -34,11 +40,11 @@ int main(int argc, char *argv[]) {
     output = fopen(nameOutput, "w");
     int flag = 0;
     if (output == NULL) {
-        printf("Не удалось найти выходной файл. Осуществляю вывод в консоль\n");
-        flag = 1; //флаг вывода в консоль
+        printf("РќРµ СѓРґР°Р»РѕСЃСЊ РЅР°Р№С‚Рё РІС‹С…РѕРґРЅРѕР№ С„Р°Р№Р». РћСЃСѓС‰РµСЃС‚РІР»СЏСЋ РІС‹РІРѕРґ РІ РєРѕРЅСЃРѕР»СЊ\n");
+        flag = 1; //С„Р»Р°Рі РІС‹РІРѕРґР° РІ РєРѕРЅСЃРѕР»СЊ
     }
     while(size(h) != 0) {
-        //записываю в файл
+        //Р·Р°РїРёСЃС‹РІР°СЋ РІ С„Р°Р№Р»
         int element = findSmallestElement(h);
         if (flag == 0) {
             fprintf(output, "%d ", element);

@@ -6,8 +6,4 @@ CMakeFiles/laba5_binaryheap_proga.dir/binaryHeap.c.obj: ../binaryHeap.h
 
 CMakeFiles/laba5_binaryheap_proga.dir/main.c.obj: ../binaryHeap.h
 CMakeFiles/laba5_binaryheap_proga.dir/main.c.obj: ../main.c
-CMakeFiles/laba5_binaryheap_proga.dir/main.c.obj: ../test.h
-
-CMakeFiles/laba5_binaryheap_proga.dir/test.c.obj: ../binaryHeap.h
-CMakeFiles/laba5_binaryheap_proga.dir/test.c.obj: ../test.c
 

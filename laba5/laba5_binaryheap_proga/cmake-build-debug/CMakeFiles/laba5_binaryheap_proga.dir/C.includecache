@@ -6,17 +6,15 @@
 
 #IncludeRegexTransform: 
 
-D:/laba5_binaryheap_proga/binaryHeap.h
-
-D:/laba5_binaryheap_proga/main.c
+D:/laba5_binaryheap_proga/binaryHeap.c
 stdio.h
 -
 stdlib.h
 -
+assert.h
+-
 binaryHeap.h
 D:/laba5_binaryheap_proga/binaryHeap.h
-test.h
-D:/laba5_binaryheap_proga/test.h
 
-D:/laba5_binaryheap_proga/test.h
+D:/laba5_binaryheap_proga/binaryHeap.h
 
