@@ -1,3 +1,0 @@
-D:/laba5_binaryheap_proga/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/laba5_binaryheap_proga/cmake-build-debug/CMakeFiles/laba5_binaryheap_proga.dir
-D:/laba5_binaryheap_proga/cmake-build-debug/CMakeFiles/rebuild_cache.dir
